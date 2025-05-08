@@ -1,0 +1,3 @@
+docker/postgres/*
+!docker/postgres/postgresql.conf
+!docker/postgres/pg_hba.conf
