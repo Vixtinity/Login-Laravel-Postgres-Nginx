@@ -13,22 +13,32 @@ class UserController extends Controller
             'loginemail' => 'required',
             'loginpassword' => 'required'
         ]);
-
-        if(auth()->attempt(['name' => $incomingFields['loginame'], 'password' => $incormingFields['loginpassword ']])){
+    
+        if(auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])){
             $request->session()->regenerate();
-
+            return redirect('/dashboard');
         }
-
+    
+        return back()->withErrors(['loginemail' => 'Credenciales incorrectas']);
     }
+    
+    public function salir(){
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function register(Request $request) {
         $incomingFields = $request->validate([
             'name' => ['required', 'min:3', 'max:10', Rule::unique('users', 'name')],
-            'email' => ['required', 'email', Rule::unique('users', 'name')],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8', 'max:200']
         ]);
+
         $incomingFields['password'] = bcrypt($incomingFields['password']);
+
         $user = User::create($incomingFields);
         auth()->login($user);
-        return redirect('/');
+        return redirect('/dashboard');
     }
+    
 }
