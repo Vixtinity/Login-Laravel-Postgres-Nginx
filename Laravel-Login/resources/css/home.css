@@ -1,25 +1,26 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.HOME.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.home.php';
-
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-.h-custom {
-height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
-.h-custom {
-height: 100%;
-}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    padding-top: 200px;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff; /* Color de fondo */
+    color: white;
+    text-align: center;
+    padding: 10px;
 }

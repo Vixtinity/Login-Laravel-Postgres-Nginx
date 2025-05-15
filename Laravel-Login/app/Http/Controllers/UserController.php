@@ -5,22 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function login(Request $request){
+
+    public function login(Request $request) {
         $incomingFields = $request->validate([
-            'loginemail' => 'required',
+            'loginemail' => 'required|email',
             'loginpassword' => 'required'
         ]);
     
-        if(auth()->attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])){
+        if (Auth::attempt(['email' => $incomingFields['loginemail'], 'password' => $incomingFields['loginpassword']])) {
             $request->session()->regenerate();
             return redirect('/dashboard');
         }
     
-        return back()->withErrors(['loginemail' => 'Credenciales incorrectas']);
+        return back()->withInput()->with('mensajeError', 'Usuario o contraseña incorrectos.');
     }
+    
     
     public function salir(){
         auth()->logout();
@@ -40,5 +43,6 @@ class UserController extends Controller
         auth()->login($user);
         return redirect('/dashboard');
     }
+    
     
 }
