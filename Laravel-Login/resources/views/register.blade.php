@@ -28,6 +28,8 @@
                         <input name="email" type="text" class="form-control" id="email" value="" required placeholder="abc@gmail.com"/>
                         <div class="invalid-feedback">Introduce tu email.</div>
                     </div>
+                    <div>
+                    </div>
                     
                     <div class="mb-3">
                         <label for="" class="form-label">Contraseña</label>

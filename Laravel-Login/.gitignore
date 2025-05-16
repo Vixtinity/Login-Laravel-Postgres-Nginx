@@ -13,7 +13,6 @@ npm-debug.log
 yarn-error.log
 
 # Configuración sensible (no subir al repositorio)
-.env
 .env.backup
 .env.production
 Homestead.json
