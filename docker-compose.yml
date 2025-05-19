@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:alpine
+    image: nginx:stable
     container_name: laravel_nginx
     ports:
       - "8000:80"
