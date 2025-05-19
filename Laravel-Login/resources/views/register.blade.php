@@ -47,9 +47,6 @@
         </div>
     </div>
 
-    <footer class="bg-primary text-white text-center py-3">
-        Copyright © 2020. All rights reserved.
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
