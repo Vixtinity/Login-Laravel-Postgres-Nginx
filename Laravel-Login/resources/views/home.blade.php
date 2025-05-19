@@ -38,7 +38,7 @@
         <div class="col d-flex justify-content-center">
         </div>
     </div>
-        <p>¿No tienes una cuenta?<a href="/">Crea aqui</a></p>
+        <p>¿No tienes una cuenta?<a href="/register"> Creala aqui</a></p>
     <!-- Submit button -->
     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
     <!-- Register buttons -->
