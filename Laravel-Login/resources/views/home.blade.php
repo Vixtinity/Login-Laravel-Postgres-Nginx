@@ -46,7 +46,7 @@
     <div class="text-center">
     </div>
 </form>
-
+<p>¿No tienes una cuenta?<a href="/">Crea aqui</a></p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
