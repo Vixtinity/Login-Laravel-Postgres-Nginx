@@ -38,15 +38,13 @@
         <div class="col d-flex justify-content-center">
         </div>
     </div>
-
     <!-- Submit button -->
     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
-
     <!-- Register buttons -->
     <div class="text-center">
     </div>
+    <p>¿No tienes una cuenta?<a href="/">Crea aqui</a></p>
 </form>
-<p>¿No tienes una cuenta?<a href="/">Crea aqui</a></p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
