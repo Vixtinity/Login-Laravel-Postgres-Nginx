@@ -27,7 +27,7 @@ services:
     command: php-fpm
 
   postgres:
-    image: postgres:alpine
+    image: postgres:latest
     container_name: laravel_postgres
     restart: unless-stopped
     ports:
