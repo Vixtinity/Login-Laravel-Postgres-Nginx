@@ -14,7 +14,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Dar permisos a storage y bootstrap/cache
-RUN chown -R www-data:www-data /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache \
+RUN mkdir -p /var/www/html/Laravel-Login/storage/logs /var/www/html/Laravel-Login/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache \
     && chmod -R 775 /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0"]
