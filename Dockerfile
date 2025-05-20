@@ -19,4 +19,8 @@ RUN mkdir -p /var/www/html/Laravel-Login/storage/logs /var/www/html/Laravel-Logi
     && chmod -R 775 /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache \
     && chmod -R 755 docker/postgres
 
+# Asegurar permisos cada vez que el contenedor se inicia
+RUN chmod -R 775 /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache
+
 CMD ["php", "artisan", "serve", "--host=0.0.0.0"]
