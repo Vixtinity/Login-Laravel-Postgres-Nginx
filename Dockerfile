@@ -11,7 +11,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Establecer directorio de trabajo
 WORKDIR /var/www/html
 
-COPY . /var/www/html/Laravel-Login
+COPY . /var/www/html
 
 # Dar permisos a storage y bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/Laravel-Login/storage /var/www/html/Laravel-Login/bootstrap/cache \
